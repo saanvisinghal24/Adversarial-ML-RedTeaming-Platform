@@ -1,0 +1,9 @@
+{
+  "model_type": "sklearn_logistic_regression",
+  "domain": "phishing_url",
+  "n_features": 30,
+  "n_train": 8844,
+  "n_test": 2211,
+  "clean_accuracy": 0.9285,
+  "clean_f1": 0.9367
+}
