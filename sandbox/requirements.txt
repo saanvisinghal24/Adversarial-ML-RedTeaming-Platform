@@ -1,0 +1,13 @@
+# M1 skeleton pins — loose on purpose, tighten once M4's attack code lands.
+adversarial-robustness-toolbox==1.18.*
+scikit-learn==1.5.*
+xgboost==2.1.*
+onnxruntime==1.19.*
+numpy==1.26.*
+pandas==2.2.*
+joblib==1.4.*
+
+# torch is required by ART for several estimators (PyTorchClassifier etc.)
+# M4 owns the actual attack code, but the base image needs the dependency
+# present so M4 doesn't have to rebuild the image mid-project.
+--extra-index-url https://download.pytorch.org/whl/cpu torch==2.3.*
