@@ -1,0 +1,7 @@
+{
+  "scan_id": "3f1a1e26-6d2d-4b2a-9b4e-6a2f9f1c0b11",
+  "component_scores": {"evasion": 0.31, "black_box": 0.0, "poisoning": 0.0},
+  "weights": {"evasion": 0.4, "black_box": 0.3, "poisoning": 0.3},
+  "final_score_0_100": 87.6,
+  "grade": "B"
+}

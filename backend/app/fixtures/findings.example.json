@@ -1,0 +1,15 @@
+{
+  "scan_id": "3f1a1e26-6d2d-4b2a-9b4e-6a2f9f1c0b11",
+  "findings": [
+    {
+      "attack": "fgsm",
+      "atlas_tactic": "AML.TA0006",
+      "atlas_technique": "AML.T0043",
+      "severity": "medium",
+      "evidence": {"asr": 0.31},
+      "mitigation": "Apply adversarial training with FGSM-generated examples; enforce input-norm bounds at inference.",
+      "owasp_ml_top10": "ML01: Input Manipulation Attack",
+      "nist_ai_rmf": "MEASURE 2.7"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "fgsm": {
+    "atlas_tactic": "AML.TA0007",
+    "atlas_tactic_name": "Defense Evasion",
+    "atlas_technique": "AML.T0043",
+    "atlas_technique_name": "Craft Adversarial Data",
+    "mitigation": "Apply adversarial training with FGSM-generated examples; add gradient masking is NOT sufficient alone, use input preprocessing (e.g. JPEG compression, feature squeezing) and input-norm bounds checking.",
+    "owasp_ml_top10": "ML01: Input Manipulation Attack",
+    "nist_ai_rmf": "MEASURE 2.7",
+    "severity_basis": "asr"
+  },
+  "pgd": {
+    "atlas_tactic": "AML.TA0007",
+    "atlas_tactic_name": "Defense Evasion",
+    "atlas_technique": "AML.T0043",
+    "atlas_technique_name": "Craft Adversarial Data",
+    "mitigation": "Apply adversarial training with PGD-generated examples (stronger iterative attack than FGSM, so training set must include multi-step perturbations); add input-norm bounds checking and certified defenses (e.g. randomized smoothing) where feasible.",
+    "owasp_ml_top10": "ML01: Input Manipulation Attack",
+    "nist_ai_rmf": "MEASURE 2.7",
+    "severity_basis": "asr"
+  }
+}

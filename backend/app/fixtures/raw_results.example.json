@@ -1,0 +1,13 @@
+{
+  "scan_id": "3f1a1e26-6d2d-4b2a-9b4e-6a2f9f1c0b11",
+  "clean_accuracy": 0.97,
+  "evasion": {
+    "fgsm": {
+      "asr": 0.31,
+      "avg_confidence_drop": 0.22,
+      "samples": [
+        {"id": 1, "orig_pred": 1, "adv_pred": 0, "conf_delta": 0.4, "perturbation_norm": 0.05}
+      ]
+    }
+  }
+}

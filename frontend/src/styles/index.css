@@ -1,0 +1,117 @@
+@import "@fontsource/inter-tight/400.css";
+@import "@fontsource/inter-tight/500.css";
+@import "@fontsource/inter-tight/600.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Self-hosting General Sans: drop GeneralSans-Semibold.woff2 / -Bold.woff2 into public/fonts/,
+   uncomment this, and remove the Fontshare <link> from index.html.
+
+@font-face {
+  font-family: "General Sans";
+  src: url("/fonts/GeneralSans-Semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "General Sans";
+  src: url("/fonts/GeneralSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+*/
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+    font-feature-settings: "tnum" 1;
+  }
+
+  ::selection {
+    @apply bg-ink text-paper;
+  }
+
+  :focus-visible {
+    outline: 2px solid #141210;
+    outline-offset: 3px;
+  }
+
+  input,
+  select {
+    @apply bg-transparent;
+  }
+}
+
+@layer components {
+  /* One type scale, used on every screen — login through scorecard. */
+  .t-display {
+    @apply font-display font-bold uppercase leading-[0.86] tracking-tightest;
+    font-size: clamp(2.75rem, 8vw, 6.5rem);
+  }
+
+  .t-head {
+    @apply font-display font-semibold uppercase leading-[0.95] tracking-tightest;
+    font-size: clamp(1.75rem, 3.4vw, 2.9rem);
+  }
+
+  .t-sub {
+    @apply font-display font-semibold uppercase leading-tight tracking-tight;
+    font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  }
+
+  .t-label {
+    @apply text-[11px] uppercase tracking-[0.18em] text-muted;
+  }
+
+  .t-data {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .rule {
+    @apply border-t border-rule;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 border border-ink px-5 py-2.5
+           text-[13px] font-medium uppercase tracking-[0.1em] transition-colors duration-200
+           disabled:cursor-not-allowed disabled:opacity-40;
+  }
+
+  .btn-solid {
+    @apply bg-ink text-paper hover:bg-signal hover:border-signal;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent text-ink hover:bg-ink hover:text-paper;
+  }
+
+  .btn-quiet {
+    @apply border-rule text-muted hover:border-ink hover:text-ink;
+  }
+
+  .field {
+    @apply w-full border-b border-rule bg-transparent py-3 text-[15px] text-ink
+           placeholder:text-muted/70 focus:border-ink focus:outline-none;
+  }
+
+  .link-underline {
+    @apply underline decoration-rule decoration-1 underline-offset-4 hover:decoration-signal;
+  }
+}
+
+/* Motion is opt-out, and the polling pulse is the only thing that animates unprompted. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
